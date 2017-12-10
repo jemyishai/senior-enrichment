@@ -1,4 +1,4 @@
-'use strict'; 
+'use strict';
 
 const express = require('express');
 const path = require('path');
@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //static middleware
 app.use(express.static(path.join(__dirname, '../public')));
+// above line serves up public folder
 
 app.use('/api', require('./api')); // include our routes!
 

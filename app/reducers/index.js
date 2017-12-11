@@ -1,4 +1,3 @@
-/* combineReducers is not currently used, but eventually should be for modular code :D */
 import { combineReducers } from "redux";
 import axios from "axios";
 
@@ -24,7 +23,6 @@ export function deleteStudent(studentId) {
   const action = { type: DELETE_STUDENT, studentId };
   return action;
 }
-
 
 export function addCampus(campusObj) {
   const action = { type: ADD_CAMPUS, campusObj };

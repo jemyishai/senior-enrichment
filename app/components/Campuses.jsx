@@ -12,7 +12,7 @@ function Campuses (props){
       <table className="table">
       <thead>
         <tr>
-        <th scope="col">Name</th>
+        <th scope="col">CAMPUS PAGE</th>
         <th scope="col">IMAGE</th>
         <th scope="col">DESCRIPTION</th>
         <th scope="col">REMOVE</th>

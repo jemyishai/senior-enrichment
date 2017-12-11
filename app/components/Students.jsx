@@ -16,8 +16,9 @@ function Students(props) {
           <table className="table">
             <thead>
               <tr>
-                <th scope="col">STUDENT ID</th>
-                <th scope="col">NAME</th>
+                <th scope="col">STUDENT</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">STUDENT PAGE</th>
                 <th scope="col">GPA</th>
                 <th scope="col">CAMPUS</th>
                 <th scope="col">REMOVE</th>
@@ -26,7 +27,7 @@ function Students(props) {
             <tbody>
               {allStudents.map(student => (
                 <tr key={student.id}>
-                  <td> ID: {student.id} </td>
+                  <td> {student.name} </td>
                   <td>
                   {student.email}
                    </td>

@@ -21,9 +21,9 @@ function SingleStudents(props){
           <table className="table">
           <thead>
             <tr>
-            <th scope="col">STUDENT ID</th>
-            <th scope="col">NAME</th>
+            <th scope="col">STUDENT</th>
             <th scope="col">EMAIL</th>
+            <th scope="col">STUDENT ID</th>
             <th scope="col">CAMPUS</th>
             <th scope="col">GPA</th>
             <th scope="col">REMOVE</th>
@@ -31,12 +31,12 @@ function SingleStudents(props){
             </thead>
             <tbody>
               <tr key={student.id}>
-              <td> ID: {student.id} </td>
+              <td> {student.name} </td>
                 <td>
-                   {student.name}
+                   {student.email}
                  </td>
                  <td>
-                 {student.email}
+                 {student.id}
                   </td>
                  {studentsCampus &&
                   <td> <NavLink to={`/campus/${student.campusId}`}> {studentsCampus.name}
@@ -74,9 +74,9 @@ function SingleStudents(props){
                 Last Name:
                 <input type="text" name="lastName" className="form-control"/>
                 EMAIL:
-                <input type="text" name="email" className="form-control"/>
+                <input type="email" name="email" className="form-control"/>
                 GPA:
-                <input type="text" name="gpa" className="form-control"/>
+                <input type="number" step="0.1" min="0" max="4.0" name="gpa" className="form-control"/>
                 <select className="form-control" name="campus">
                 <option value="Choose A Campus">Campus Name</option>
                 {

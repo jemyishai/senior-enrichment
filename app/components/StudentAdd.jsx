@@ -22,7 +22,7 @@ function StudentAdd(props) {
                 Last Name:
                 <input type="text" name="lastName" className="form-control" />
                 EMAIL:
-                <input type="text" name="email" className="form-control" />
+                <input type="email" name="email" className="form-control" />
                 GPA:
                 <input type="text" name="gpa" className="form-control" />
                 <select className="form-control" name="campus">

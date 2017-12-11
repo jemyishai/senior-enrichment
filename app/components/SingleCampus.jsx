@@ -18,9 +18,9 @@ function SingleCampus(props){
     if (studentsAtThisCampus.length > 0 && thisCampus) {
       return (
         <div>
-        <h3>STUDENTS AT {thisCampus.name} Campus</h3>
-        <h4>DESCRIPTION:</h4>
-        <p>{thisCampus.description}</p>
+        <h2>{thisCampus.name} Campus</h2>
+        <h4>DESCRIPTION: {thisCampus.description}</h4>
+        <img src={ thisCampus.imageUrl } className="img-fluid img-thumbnail" />
           <div>
           <table className="table">
           <thead>

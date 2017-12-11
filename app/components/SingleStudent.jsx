@@ -23,6 +23,7 @@ function SingleStudents(props){
             <tr>
             <th scope="col">STUDENT ID</th>
             <th scope="col">NAME</th>
+            <th scope="col">EMAIL</th>
             <th scope="col">CAMPUS</th>
             <th scope="col">GPA</th>
             <th scope="col">REMOVE</th>
@@ -34,7 +35,9 @@ function SingleStudents(props){
                 <td>
                    {student.name}
                  </td>
-
+                 <td>
+                 {student.email}
+                  </td>
                  {studentsCampus &&
                   <td> <NavLink to={`/campus/${student.campusId}`}> {studentsCampus.name}
                   </NavLink></td>
@@ -45,11 +48,12 @@ function SingleStudents(props){
 
                 }
 
-
                 <td>{student.gpa}</td>
                 <td>
+                <NavLink to={`/students/`}>
                 <button id={student.id} className="btn btn-warning" onClick={props.handleClick}
                 >REMOVE STUDENT</button>
+                </NavLink>
                 </td>
                </tr>
             </tbody>

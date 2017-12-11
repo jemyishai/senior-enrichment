@@ -3,26 +3,38 @@ import { Route, Switch, Redirect, HashRouter, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {deleteCampus, deleteCampusFromDb} from '../reducers'
-// import AllStudents from './AllStudents'
+
 
 function Campuses (props){
     const allCampuses = props.campuses
     return (
-        <ul>
-        {allCampuses.map(campus =>
-        (<li key={campus.id}>
-          <NavLink to={`/campus/${campus.id}`}>
-            {campus.name}
+      <div>
+      <table className="table">
+      <thead>
+        <tr>
+        <th scope="col">Name</th>
+        <th scope="col">IMAGE</th>
+        <th scope="col">DESCRIPTION</th>
+        <th scope="col">REMOVE</th>
+        </tr>
+      </thead>
+      <tbody>
 
-            <img src={ campus.imageUrl } className="img-fluid img-thumbnail" />
-            <p> DESCRIPTION: {campus.description} </p>
-            </NavLink>
-            <button id={campus.id} className="btn btn-warning" onClick={props.handleClick}
-            >REMOVE CAMPUS</button>
-            <br/><hr/>
-          </li>))
+        {allCampuses.map(campus =>
+        (<tr key={campus.id}>
+          <NavLink to={`/campus/${campus.id}`}>
+            <td>{campus.name}</td></NavLink>
+
+            <td><img src={ campus.imageUrl } className="img-fluid img-thumbnail" /></td>
+            <td> DESCRIPTION: {campus.description} </td>
+
+            <td><button id={campus.id} className="btn btn-warning" onClick={props.handleClick}
+            >REMOVE CAMPUS</button></td>
+          </tr>))
         }
-        </ul>
+        </tbody>
+        </table>
+        </div>
     )
   }
 

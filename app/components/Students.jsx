@@ -28,6 +28,9 @@ function Students(props) {
                 <tr key={student.id}>
                   <td> ID: {student.id} </td>
                   <td>
+                  {student.email}
+                   </td>
+                  <td>
                     <NavLink to={`/students/${student.id}`}>
                       {" "}
                       {student.name}

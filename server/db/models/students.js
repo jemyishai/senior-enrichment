@@ -1,7 +1,7 @@
-const Sequelize = require('sequelize');
-const db = require('../index.js');
+const Sequelize = require("sequelize");
+const db = require("../index.js");
 
-module.exports = db.define('students', {
+module.exports = db.define("students", {
   firstName: {
     type: Sequelize.STRING,
     allowNull: false
@@ -27,8 +27,10 @@ module.exports = db.define('students', {
   },
   name: {
     type: Sequelize.VIRTUAL,
-    get () {
-      return this.getDataValue('firstName') + ' ' + this.getDataValue('lastName')
+    get() {
+      return (
+        this.getDataValue("firstName") + " " + this.getDataValue("lastName")
+      );
     }
   }
 });

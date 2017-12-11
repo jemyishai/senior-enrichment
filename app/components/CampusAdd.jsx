@@ -10,8 +10,8 @@ function CampusAdd(props) {
       <form onSubmit={props.handleSubmit} className="form-horizontal">
         <fieldset>
           <legend>Add A Campus</legend>
-          <div className="form-group">
-            <div className="col-xs-10">
+          <div>
+            <div>
               NAME<input type="text" name="name" className="form-control" />
               IMAGE URL<input
                 type="text"
@@ -26,7 +26,7 @@ function CampusAdd(props) {
             </div>
           </div>
           <div className="form-group">
-            <div className="col-xs-10 col-xs-offset-2">
+            <div>
               <button type="submit" className="btn btn-success">
                 Add Campus
               </button>
@@ -38,7 +38,7 @@ function CampusAdd(props) {
   );
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, ownProps) {
   return {
     handleSubmit: event => {
       event.preventDefault();
@@ -47,7 +47,7 @@ function mapDispatchToProps(dispatch) {
         imageUrl: event.target.imageUrl.value,
         description: event.target.description.value
       };
-      const newCampusThunk = addCampusAxios(newCampusObj);
+      const newCampusThunk = addCampusAxios(newCampusObj, ownProps.history);
       dispatch(newCampusThunk);
     }
   };

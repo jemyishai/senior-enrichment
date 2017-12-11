@@ -6,14 +6,13 @@ import { addStudentAxios } from "../reducers";
 // import {addCampus, addToCampusDb} from '../reducers'
 
 function StudentAdd(props) {
-  console.log("Rendering studentAdd with these props: ", props);
   if (props.campuses.length > 0) {
     return (
       <div className="well">
         <form className="form-horizontal" onSubmit={props.handleSubmit}>
           <fieldset>
             <div className="form-group">
-              <label htmlFor="campus" className="col-xs-2 control-label">
+              <label htmlFor="campus">
                 ADD A STUDENT
               </label>
               <div className="col-xs-10">
@@ -25,6 +24,7 @@ function StudentAdd(props) {
                 <input type="email" name="email" className="form-control" />
                 GPA:
                 <input type="text" name="gpa" className="form-control" />
+                <br />
                 <select className="form-control" name="campus">
                   <option value="Choose A Campus">Campus Name</option>
                   {props.campuses.map(campus => {
@@ -38,7 +38,7 @@ function StudentAdd(props) {
               </div>
             </div>
             <div className="form-group">
-              <div className="col-xs-10 col-xs-offset-2">
+              <div>
                 <button type="submit" className="btn btn-success">
                   ADD STUDENT
                 </button>
@@ -60,7 +60,7 @@ function mapStateToProps(state, ownProps) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, ownProps) {
   return {
     handleSubmit: event => {
       event.preventDefault();
@@ -71,7 +71,7 @@ function mapDispatchToProps(dispatch) {
         gpa: event.target.gpa.value,
         campusId: event.target.campus.value
       };
-      const addStudentThunk = addStudentAxios(newStudentObj);
+      const addStudentThunk = addStudentAxios(newStudentObj, ownProps.history);
       dispatch(addStudentThunk);
     }
   };

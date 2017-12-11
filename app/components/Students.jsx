@@ -28,9 +28,7 @@ function Students(props) {
               {allStudents.map(student => (
                 <tr key={student.id}>
                   <td> {student.name} </td>
-                  <td>
-                  {student.email}
-                   </td>
+                  <td>{student.email}</td>
                   <td>
                     <NavLink to={`/students/${student.id}`}>
                       {" "}
@@ -38,12 +36,16 @@ function Students(props) {
                     </NavLink>
                   </td>
                   <td>{student.gpa}</td>
-                 { student.campus ?
-                    <td> <NavLink to={`/campus/${student.campusId}`}>
-                    {student.campus.name}
-                    </NavLink> </td>
-                                    : <td>This student has no campus </td> }
-
+                  {student.campus ? (
+                    <td>
+                      {" "}
+                      <NavLink to={`/campus/${student.campusId}`}>
+                        {student.campus.name}
+                      </NavLink>{" "}
+                    </td>
+                  ) : (
+                    <td>This student has no campus </td>
+                  )}
 
                   <td>
                     <button

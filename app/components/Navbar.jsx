@@ -8,7 +8,7 @@ const Navbar = () => {
 <div>
     <NavLink to={"/"}>ALL CAMPUSES </NavLink> |&nbsp;
     <NavLink to={"/students"}>STUDENTS</NavLink> |&nbsp;
-    <NavLink to={"/campus/add"}>ADD/EDIT A CAMPUS</NavLink>
+    <NavLink to={"/campus/add"}>ADD A CAMPUS</NavLink>
     <hr/>
 </div>
   );

@@ -16,7 +16,6 @@ function SingleCampus(props){
     })
 
     if (studentsAtThisCampus.length > 0 && thisCampus) {
-      console.log("Rendering single campus", props)
       return (
         <div>
         <h3>STUDENTS AT {thisCampus.name} Campus</h3>

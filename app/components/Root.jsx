@@ -17,12 +17,6 @@ import SingleStudent from "./SingleStudent";
 import CampusAdd from "./CampusAdd";
 import StudentAdd from "./StudentAdd";
 
-// import Sidebar from './Sidebar';
-// import Navbar from './Navbar';
-// <Sidebar />
-// <Navbar />
-// <Route path={`/api/students/${student.id}` />
-
 class Root extends Component {
   componentDidMount() {
     this.props.gettingAllData();

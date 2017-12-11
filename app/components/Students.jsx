@@ -6,13 +6,11 @@ import { deleteStudentFromDb } from "../reducers";
 function Students(props) {
   const allStudents = props.students;
   if (allStudents.length > 0) {
-    console.log("Rendering all students", props.students);
-
     return (
       <div>
         <h3>
-          All STUDENTS |
-          <NavLink to={"/student/add"}> ADD A STUDENT</NavLink>
+          All STUDENTS |&nbsp;
+          <NavLink to={"/student/add"}>ADD A STUDENT</NavLink>
         </h3>
         <div>
           <table className="table">
@@ -36,14 +34,12 @@ function Students(props) {
                     </NavLink>
                   </td>
                   <td>{student.gpa}</td>
-                  {!student.campus && <td>This student has no campus</td>}
-                  {student.campus && (
-                    <td>
-                      <NavLink to={`/campus/${student.campusId}`}>
-                        {student.campus.name}
-                      </NavLink>
-                    </td>
-                  )}
+                 { student.campus ?
+                    <td> <NavLink to={`/campus/${student.campusId}`}>
+                    {student.campus.name}
+                    </NavLink> </td>
+                                    : <td>This student has no campus </td> }
+
 
                   <td>
                     <button

@@ -3,7 +3,6 @@ import { Route, Switch, Redirect, HashRouter, NavLink } from "react-router-dom";
 import axios from "axios";
 import { connect } from "react-redux";
 import { addCampusAxios } from "../reducers";
-// import {addCampus, addToCampusDb} from '../reducers'
 
 function CampusAdd(props) {
   return (

@@ -27,6 +27,7 @@ export function deleteStudent(studentId){
   return action;
 }
 
+//could get rid of it with multiple dispatches
 export function deleteCampus(campusId){
   const action = {type: DELETE_CAMPUS, campusId}
   return action;
@@ -105,8 +106,8 @@ export function deleteStudentFromDb(studentId) {
   return function thunk(dispatch) {
     return axios.delete(`/api/students/${studentId}`)
     .then(something => {
-      const action = deleteStudent(studentId)
-      dispatch(action)
+      // const action = deleteStudent(studentId)
+      dispatch(fetchStudents())
     })
   }
 }
@@ -115,8 +116,10 @@ export function deleteCampusFromDb(campusId) {
   return function thunk(dispatch) {
     return axios.delete(`/api/campuses/${campusId}`)
     .then(something => {
-      const action = deleteCampus(campusId)
-      dispatch(action)
+      // const action = deleteCampus(campusId)
+      dispatch(fetchCampuses())
+      // to rerender in the event of deleted campus for students without cmapus
+      dispatch(fetchStudents())
     })
   }
 }

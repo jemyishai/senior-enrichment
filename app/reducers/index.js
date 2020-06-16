@@ -101,7 +101,8 @@ export function fetchCampuses() {
 export function deleteStudentFromDb(studentId) {
   return function thunk(dispatch) {
     return axios.delete(`/api/students/${studentId}`).then(something => {
-      dispatch(fetchStudents());
+      //dispatch(fetchStudents());
+      dispatch(deleteStudent(studentId))
     });
   };
 }

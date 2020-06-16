@@ -6,7 +6,7 @@ const campuses = [
   {
     name: "Earth",
     imageUrl:
-      "http://www.thinkgeek.com/images/products/additional/large/inul_starfleet_capri_yoga_pants_detail.jpg",
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.makeuseof.com%2Fwp-content%2Fuploads%2F2014%2F03%2FGoogle-Earth.jpg&f=1&nofb=1",
     description: "Beam Me Up, Scotty"
   },
   {

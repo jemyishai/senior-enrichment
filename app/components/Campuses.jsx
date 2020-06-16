@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import { Route, Switch, Redirect, HashRouter, NavLink } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
+import {  NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { deleteCampus, deleteCampusFromDb } from '../reducers';
+import { deleteCampusFromDb } from '../reducers';
 
 function Campuses(props) {
   const allCampuses = props.campuses;
